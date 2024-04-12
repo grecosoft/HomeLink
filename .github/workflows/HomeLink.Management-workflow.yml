@@ -24,7 +24,7 @@ jobs:
       aksName: aksmscluster
       imageRegistry: aksmsclusteracr.azurecr.io
       chartName: microservice
-      chartVersion: 1.0.9
+      chartVersion: 1.0.1
     steps:
       - run: echo "Common Workfow Variables"
       
