@@ -8,6 +8,7 @@
     <ProjectReference Include="..\HomeLink.Management.Domain\HomeLink.Management.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="HomeLink.Common.Infra" Version="1.0.2" />
     <PackageReference Include="NetFusion.Common" Version="8.0.43" />
     <PackageReference Include="NetFusion.Common.Base" Version="8.0.43" />
     <PackageReference Include="NetFusion.Core.Bootstrap" Version="8.0.43" />
