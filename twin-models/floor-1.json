@@ -1,0 +1,13 @@
+{
+    "@id": "dtmi:iothome:floor;1",
+    "@type": "Interface",
+    "displayName": "Floor Interface Model",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+      {
+        "@type": "Relationship",
+        "name": "contains_room",
+        "target": "dtmi:iothome:room;1"
+      }
+    ]
+  }

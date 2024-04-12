@@ -1,0 +1,35 @@
+{
+    "@id": "dtmi:iothome:house;1",
+    "@type": "Interface",
+    "displayName": "House Interface Model",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+      {
+        "name": "constructionYear",
+        "@type": "Property",
+        "schema": "string"
+      },
+      {
+        "name": "owner",
+        "@type": "Property",
+        "schema": "string"
+      },
+      {
+        "name": "address",
+        "@type": "Component",
+        "schema": "dtmi:iothome:address;1"
+      },
+      {
+        "@type": "Relationship",
+        "name": "has_floor",
+        "target": "dtmi:iothome:floor;1",
+        "properties": [
+            {
+                "@type": "Property",
+                "name": "level",
+                "schema": "integer"
+            }
+        ]
+      }
+    ]
+  }

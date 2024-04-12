@@ -1,0 +1,24 @@
+{
+    "@id": "dtmi:iothome:device:data;1",
+    "@type": "Interface",
+    "@context": "dtmi:dtdl:context;2",
+    "displayName": "Associated Device Data",
+    "contents": [
+        {
+          "@type": "Property",
+          "name": "description",
+          "schema": "string"
+        },
+        {
+          "@type": "Property",
+          "name": "sourcePath",
+          "schema": "string"
+        },
+        {
+          "@type":  "Relationship",
+          "name": "generated_by",
+          "description": "Reference to the device that generated that data.",
+          "target": "dtmi:iothome:device;1"
+        }
+      ]
+}

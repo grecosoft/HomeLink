@@ -1,0 +1,249 @@
+{
+    "@id": "dtmi:azurertos:devkit:gsgmxchip;2",
+    "@type": "Interface",
+    "extends": ["dtmi:iothome:device;1"],
+    "contents": [
+        {
+            "@type": [
+                "Telemetry",
+                "Temperature",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Temperature"
+            },
+            "name": "temperature",
+            "schema": "double",
+            "unit": "degreeCelsius"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "RelativeHumidity",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Humidity"
+            },
+            "name": "humidity",
+            "schema": "double",
+            "unit": "percent"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "Pressure",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Pressure"
+            },
+            "name": "pressure",
+            "schema": "double",
+            "unit": "kilopascal"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Magnetometer X / mgauss"
+            },
+            "name": "magnetometerX",
+            "schema": "double"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Magnetometer Y / mgauss"
+            },
+            "name": "magnetometerY",
+            "schema": "double"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Magnetometer Z / mgauss"
+            },
+            "name": "magnetometerZ",
+            "schema": "double"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "Acceleration",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Accelerometer X"
+            },
+            "name": "accelerometerX",
+            "schema": "double",
+            "unit": "gForce"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "Acceleration",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Accelerometer Y"
+            },
+            "name": "accelerometerY",
+            "schema": "double",
+            "unit": "gForce"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "Acceleration",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Accelerometer Z"
+            },
+            "name": "accelerometerZ",
+            "schema": "double",
+            "unit": "gForce"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "AngularVelocity",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Gyroscope X"
+            },
+            "name": "gyroscopeX",
+            "schema": "double",
+            "unit": "degreePerSecond"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "AngularVelocity",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Gyroscope Y"
+            },
+            "name": "gyroscopeY",
+            "schema": "double",
+            "unit": "degreePerSecond"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "AngularVelocity",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Gyroscope Z"
+            },
+            "name": "gyroscopeZ",
+            "schema": "double",
+            "unit": "degreePerSecond"
+        },
+        {
+            "@type": [
+                "Property",
+                "NumberValue"
+            ],
+            "description": {
+                "en": "Control the frequency of the telemetry loop."
+            },
+            "displayName": {
+                "en": "Telemetry Interval"
+            },
+            "name": "telemetryInterval",
+            "schema": "integer",
+            "writable": true
+        },
+        {
+            "@type": [
+                "Property",
+                "BooleanValue"
+            ],
+            "description": {
+                "en": "Returns the current state of the onboard LED."
+            },
+            "displayName": {
+                "en": "LED state"
+            },
+            "name": "ledState",
+            "schema": "boolean"
+        },
+        {
+            "@type": "Command",
+            "description": {
+                "en": "Sets the state of the onboard LED."
+            },
+            "displayName": {
+                "en": "Set LED state"
+            },
+            "name": "setLedState",
+            "request": {
+                "@type": "CommandPayload",
+                "description": {
+                    "en": "True is LED on, false is LED off."
+                },
+                "displayName": {
+                    "en": "State"
+                },
+                "name": "state",
+                "schema": "boolean"
+            }
+        },
+        {
+            "@type": "Command",
+            "description": {
+                "en": "Display text on screen."
+            },
+            "displayName": {
+                "en": "Display Text"
+            },
+            "name": "setDisplayText",
+            "request": {
+                "@type": "CommandPayload",
+                "description": {
+                    "en": "Text displayed on the screen."
+                },
+                "displayName": {
+                    "en": "Text"
+                },
+                "name": "text",
+                "schema": "string"
+            }
+        },
+        {
+            "@type": "Component",
+            "description": {
+                "en": "Interface with basic device hardware information."
+            },
+            "displayName": {
+                "en": "Device Information"
+            },
+            "name": "deviceInformation",
+            "schema": "dtmi:azure:DeviceManagement:DeviceInformation;1"
+        }
+    ],
+    "description": {
+        "en": "Example model for the Azure RTOS MXCHIP Getting Started Guide"
+    },
+    "displayName": {
+        "en": "MXCHIP Getting Started Guide"
+    },
+    "@context": [
+        "dtmi:iotcentral:context;2",
+        "dtmi:dtdl:context;2"
+    ]
+}

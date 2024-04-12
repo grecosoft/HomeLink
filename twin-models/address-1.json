@@ -1,0 +1,29 @@
+{
+    "@id": "dtmi:iothome:address;1",
+    "@type": "Interface",
+    "displayName": "Address",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "street",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "city",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "state",
+        "schema": "string"
+      },
+      {
+        "@type": "Property",
+        "name": "zip",
+        "schema": "string"
+      }
+
+    ]
+  }

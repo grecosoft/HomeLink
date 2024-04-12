@@ -1,0 +1,104 @@
+{
+    "@id": "dtmi:azureiot:PhoneAsADevice;2",
+    "@type": "Interface",
+    "extends": ["dtmi:iothome:device;1"],
+    "contents": [
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Sensors"
+            },
+            "name": "sensors",
+            "schema": "dtmi:azureiot:PhoneSensors;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Device information"
+            },
+            "name": "device_info",
+            "schema": "dtmi:azure:DeviceManagement:DeviceInformation;1"
+        },
+        {
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "LightOn"
+            },
+            "name": "lightOn",
+            "request": {
+                "@type": [
+                    "CommandPayload",
+                    "Initialized"
+                ],
+                "displayName": {
+                    "en": "Parameters"
+                },
+                "name": "parameters",
+                "initialValue": {
+                    "duration": 3,
+                    "pulses": 2
+                },
+                "schema": {
+                    "@type": "Object",
+                    "displayName": {
+                        "en": "Object"
+                    },
+                    "fields": [
+                        {
+                            "displayName": {
+                                "en": "Duration"
+                            },
+                            "name": "duration",
+                            "schema": "integer"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Pulses interval"
+                            },
+                            "name": "delay",
+                            "schema": "integer"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Pulses"
+                            },
+                            "name": "pulses",
+                            "schema": "integer"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@type": [
+                "Property",
+                "StringValue"
+            ],
+            "displayName": {
+                "en": "Cloud property"
+            },
+            "name": "writeableProp",
+            "schema": "string",
+            "writable": true
+        },
+        {
+            "@type": [
+                "Property",
+                "StringValue"
+            ],
+            "displayName": {
+                "en": "Editable property"
+            },
+            "name": "readOnlyProp",
+            "schema": "string"
+        }
+    ],
+    "displayName": {
+        "en": "IoT Plug and Play mobile"
+    },
+    "@context": [
+        "dtmi:iotcentral:context;2",
+        "dtmi:dtdl:context;2"
+    ]
+}

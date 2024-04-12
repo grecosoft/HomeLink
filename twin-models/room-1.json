@@ -1,0 +1,18 @@
+{
+    "@id": "dtmi:iothome:room;1",
+    "@type": "Interface",
+    "displayName": "Room Interface Model",
+    "@context": "dtmi:dtdl:context;2",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "description",
+        "schema": "string"
+      },
+      {
+        "@type":  "Relationship",
+        "name": "has_device_data",
+        "target": "dtmi:iothome:device:data;1"
+      }
+    ]
+  }
