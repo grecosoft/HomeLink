@@ -24,3 +24,38 @@ output "GITHUB_SECRETS" {
     APP_CONFIG_NAME       = module.app_config.app_config_name
   }
 }
+
+
+output "primary_blob_endpoint" {
+  value = module.storage_account.primary_blob_endpoint
+}
+
+output "storage_account_name" {
+  value = module.storage_account.account_name
+}
+
+output "digital_twins_host_name" {
+  value = module.digital_twins.digital_twins_host_name
+}
+
+output "servicebus_hostname" {
+  value = module.service_bus.servicebus_hostname
+}
+
+// TODO:  Encapsulate these related fields into an object and
+// other related properties:
+output "event_hub_namespace_name" {
+  value = module.event_hub.event_hub_namespace_name
+}
+
+output "event_hub_hostname" {
+  value = module.event_hub.event_hub_hostname
+}
+
+output "device_data_hub_name" {
+  value = module.event_hub.device_data_hub_name
+}
+
+output "device_data_enriched_hub_name" {
+  value = module.event_hub.device_data_enriched_hub_name
+}

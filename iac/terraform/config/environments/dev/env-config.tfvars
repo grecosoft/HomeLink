@@ -14,4 +14,22 @@ solution = {
   appconfig = {
     namespace = "app-config-system"
   }
+  storage = {
+    name = "homelinksa"
+  }
+  iothub = {
+    name = "home-iot-hub-v7oeoov"
+  }
+  iot_central = {
+    name = "home-central"
+  }
+  digitaltwins = {
+    name = "homelink-dt"
+  }
+  eventHub = {
+    name = "homelink-eh"
+  }
+  servicebus = {
+    name = "homelink-sb"
+  }
 }

@@ -69,6 +69,72 @@ module "helm_installs" {
   solution_namespace = kubernetes_namespace.solution_ns.metadata[0].name
 }
 
+module "storage_account" {
+  source         = "./modules/storage_acct"
+  resource_group = azurerm_resource_group.solution_rg.name
+  location       = azurerm_resource_group.solution_rg.location
+  name           = var.solution.storage.name
+  unique_postfix = local.unique_postfix
+  identity       = module.workload_identity.identity
+}
+
+// -- Create IoT Hub to which devices can be added. 
+//    This will be used to connect an IoT Devkit device used to send
+//    test data to the solution.
+module "iot_hub" {
+  source                      = "./modules/iot_hub"
+  iot_hub_name                = var.solution.iothub.name
+  unique_postfix              = local.unique_postfix
+  resource_group              = azurerm_resource_group.solution_rg.name
+  location                    = azurerm_resource_group.solution_rg.location
+  telemetry_hub_conn_string   = module.event_hub.telemetry_hub_conn_string
+  telemetry_queue_conn_string = module.service_bus.telemetry_queue_conn_string
+  key_vault_key_id            = module.key_vault.key_vault_id
+  depends_on                  = [module.key_vault]
+}
+
+module "iot_hub_central" {
+  source         = "./modules/iot_central"
+  name           = var.solution.iot_central.name
+  resource_group = azurerm_resource_group.solution_rg.name
+  location       = azurerm_resource_group.solution_rg.location
+  unique_postfix = local.unique_postfix
+  depends_on     = [module.key_vault]
+}
+
+module "digital_twins" {
+  source                 = "./modules/digital_twins"
+  name                   = var.solution.digitaltwins.name
+  resource_group         = azurerm_resource_group.solution_rg.name
+  location               = azurerm_resource_group.solution_rg.location
+  identity               = module.workload_identity.identity
+  configuration_store_id = module.app_config.app_config_id
+  depends_on             = [module.key_vault]
+}
+
+module "event_hub" {
+  source         = "./modules/event_hub"
+  name           = var.solution.eventHub.name
+  resource_group = azurerm_resource_group.solution_rg.name
+  location       = azurerm_resource_group.solution_rg.location
+  identity       = module.workload_identity.identity
+  unique_postfix = local.unique_postfix 
+  storage_account_name = module.storage_account.account_name
+}
+
+module "service_bus" {
+  source                 = "./modules/service_bus"
+  name                   = var.solution.digitaltwins.name // TODO: Fix
+  resource_group         = azurerm_resource_group.solution_rg.name
+  location               = azurerm_resource_group.solution_rg.location
+  unique_postfix         = local.unique_postfix
+  configuration_store_id = module.app_config.app_config_id
+  identity               = module.workload_identity.identity
+  depends_on             = [module.key_vault]
+}
+
+
+
 locals {
   tenant_id           = module.workload_identity.identity.tenant_id
   workload_client_id  = module.workload_identity.identity.client_id
