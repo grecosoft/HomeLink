@@ -13,4 +13,7 @@
     <PackageReference Include="NetFusion.Core.Bootstrap" Version="8.0.43" />
     <PackageReference Include="NetFusion.Messaging.Types" Version="8.0.43" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.DigitalTwins.Core" Version="1.4.0" />
+  </ItemGroup>
 </Project>

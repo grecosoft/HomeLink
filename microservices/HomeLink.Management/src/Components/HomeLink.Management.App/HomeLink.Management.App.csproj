@@ -8,10 +8,18 @@
     <ProjectReference Include="..\HomeLink.Management.Domain\HomeLink.Management.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="HomeLink.Common.Infra" Version="1.0.2" />
+    <PackageReference Include="HomeLink.Common.Infra" Version="1.0.22" />
+    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.30.4" />
     <PackageReference Include="NetFusion.Common" Version="8.0.43" />
     <PackageReference Include="NetFusion.Common.Base" Version="8.0.43" />
     <PackageReference Include="NetFusion.Core.Bootstrap" Version="8.0.43" />
     <PackageReference Include="NetFusion.Core.Settings" Version="8.0.43" />
+    <PackageReference Include="NetFusion.Messaging" Version="8.0.43" />
+    <PackageReference Include="NetFusion.Services.Mapping" Version="8.0.43" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.11.0" />
+    <PackageReference Include="Azure.ResourceManager.DigitalTwins" Version="1.3.0" />
+    <PackageReference Include="Microsoft.Azure.DigitalTwins.Parser" Version="3.12.7" />
   </ItemGroup>
 </Project>
