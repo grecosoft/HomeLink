@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using NetFusion.Core.Bootstrap.Catalog;
 using NetFusion.Core.Bootstrap.Plugins;
 

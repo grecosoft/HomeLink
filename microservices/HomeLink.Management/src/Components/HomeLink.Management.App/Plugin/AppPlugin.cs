@@ -12,6 +12,7 @@ public class AppPlugin : PluginBase
     public AppPlugin()
     {
         AddModule<ServiceModule>();
+        AddModule<TwinUpdateModule>();
 
         Description = "Plugin component containing the Microservice's application services.";
     }   
