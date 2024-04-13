@@ -1,4 +1,5 @@
-﻿using HomeLink.Enrichment.App.Plugin;
+﻿using HomeLink.Common.Infra.Plugin;
+using HomeLink.Enrichment.App.Plugin;
 using HomeLink.Enrichment.Domain.Plugin;
 using HomeLink.Enrichment.Infra.Plugin;
 using HomeLink.Enrichment.WebApi.Plugin;
@@ -36,6 +37,7 @@ try
     builder.Services.CompositeContainer(builder.Configuration, bootstrapLoggerFactory, new SerilogExtendedLogger())
         .AddSettings()
 
+        .AddPlugin<CommonInfraPlugin>()
         .AddPlugin<InfraPlugin>()
         .AddPlugin<AppPlugin>()
         .AddPlugin<DomainPlugin>()

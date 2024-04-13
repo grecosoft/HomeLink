@@ -11,7 +11,7 @@ public class AppPlugin : PluginBase
 
     public AppPlugin()
     {
-        AddModule<ServiceModule>();
+        AddModule<EventEnrichmentModule>();
 
         Description = "Plugin component containing the Microservice's application services.";
     }   
